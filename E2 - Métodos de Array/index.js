@@ -48,56 +48,60 @@ const pizzas = [
   },
 ];
 
-// BUSCADOR ID PAR
-const buscarIdPar = (arreglo) => {
-  for (i = 0; i < arreglo.length; i++) {
-    if(arreglo[i].id % 2 != 0) {
-      console.log(arreglo[i].nombre);
-    }
+      
+// BUSCADOR ID IMPAR
+const filtroId = pizzas.filter(x => {return x.id % 2 != 0 });
+
+const mostrarId = (filtro) => {
+  for (i = 0; i < filtro.length; i++) {
+    console.log(filtro[i].nombre);
   }
 }
 
 // PIZZAS CON VALOR MENOR A %600
-const MenorSeiscientos = (arreglo) => {
-  for(i = 0; i < arreglo.length; i++) {
-    if(arreglo[i].precio <= 600) {
-      console.log(`${arreglo[i].nombre}. Precio: $${arreglo[i].precio}`);
-    }
+const buscarMenorValor = pizzas.filter(x => {return x.precio <= 600});
+
+const mostrarMenorValor = (arreglo) => {
+  for (i = 0; i < arreglo.length; i++) {
+    console.log(`${arreglo[i].nombre}. Precio: $${arreglo[i].precio}`);
   }
 }
 
 // LISTADO DE PIZZAS Y PRECIO
-const mostrarPizzas = (arreglo) => {
+
+const ListadoPizzas = pizzas.map(pizza => 
+  `${pizza.nombre}: $${pizza.precio}`
+)
+
+const mostrarListado = (arreglo) => {
   for (i = 0; i < arreglo.length; i++) {
-    console.log(`${arreglo[i].nombre}: $${arreglo[i].precio}.`);
+    console.log(`${arreglo[i]}`);
   }
 }
 
 // INGREDIENTES
 const mostrarIngredientes = (arreglo) => {
-  for (i = 0; i < arreglo.length; i++) {
-    console.log(`Los ingredientes de nuestra ${arreglo[i].nombre} son: `);
-
-    for (j = 0; j < arreglo[i].ingredientes.length; j++) {
-      console.log(`${arreglo[i].ingredientes[j]}`);
-    }
-
+  arreglo.forEach(pizza => {
+    console.log(`Los ingredientes de nuestra ${pizza.nombre} son: `);
+    pizza.ingredientes.forEach(ingrediente => {
+      console.log(ingrediente);
+    });
     console.log('\n');
-  }
-}
+  });
+};
 
 console.log(`%cLas pizzas con un ID par son las siguientes: `,'color: rgb(45, 187, 187)');
-buscarIdPar(pizzas);
+mostrarId(filtroId);
 
 console.log(`\n--------------------------------------------------------\n\n`);
 
 console.log(`%cLas pizzas con un precio menor a $600 las siguientes: `,'color: rgb(45, 187, 187)');
-MenorSeiscientos(pizzas);
+mostrarMenorValor(buscarMenorValor);
 
 console.log(`\n--------------------------------------------------------\n\n`);
 
 console.log(`%cListado de precios de NucbaPizzas: `,'color: rgb(45, 187, 187)');
-mostrarPizzas(pizzas);
+mostrarListado(ListadoPizzas);
 
 console.log(`\n--------------------------------------------------------\n\n`);
 
