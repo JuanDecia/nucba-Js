@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 85%;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGl6emF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+main {
+    background-color: rgba(197, 201, 204, 0.9);
+    padding: 25px;
+}
+
+/* -- Animaciones -- */
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+/* ######### CONTENT */
+
+/* ###### HEADER */
+
+h1 {
+    text-align: center;
+    color: rgb(199, 99, 18);
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.42);
+    animation: fade 1s ease-in, slide-down 1.5s ease-in-out;
+}
+
+/* ######### MAIN CONTENT */
+
+section {
+    margin: 40px 0;
+}
+
+/* -- Article Resultado -- */
+
+.article-resultado {
+    margin: 45px 0;
+}
+
+/* -- Article Buscador -- */
+
+.article-buscador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    padding: 10px;
+}
+
+/* Contenedor Input */
+
+input {
+    padding: 10px;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+input::placeholder {
+    color: black;
+}
+
+.cont-btn {
+    width: 10%;
+}
+
+button {
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.4s ease-in-out, color 0.3s ease-in;
+}
+
+button:hover {
+    background-color: rgb(199, 99, 18);
+    color: aliceblue;
+}
+
+/* -- */
+
+/* Resultado */
+
+#resultado {
+    display: flex;
+    border: 1px solid black;
+    margin: 40px auto;
+    width: 60%;
+    animation: fade 1.1s ease-in;
+    display: none;
+}
+
+.cont-img {
+    width: 50%;
+}
+
+.pizza-img {
+    width: 270px;
+}
+
+.titulo-pizza {
+    margin: 30px 0;
+}
+
+/* Resultado Vacío */
+
+#resultado-vacio {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    padding: 30px;
+    width: 40%;
+    border-radius: 10px;
+    color: red;
+    font-weight: 600;
+    border: 1px solid red;
+    display: none;
+    animation: fade 1.1s ease-in-out;
+}
