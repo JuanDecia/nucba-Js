@@ -110,7 +110,6 @@ button:hover {
 
 #resultado {
     display: flex;
-    border: 1px solid black;
     margin: 40px auto;
     width: 60%;
     animation: fade 1.1s ease-in;

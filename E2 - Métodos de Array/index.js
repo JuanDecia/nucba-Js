@@ -71,7 +71,7 @@ const mostrarMenorValor = (arreglo) => {
 
 const ListadoPizzas = pizzas.map(pizza => 
   `${pizza.nombre}: $${pizza.precio}`
-)
+);
 
 const mostrarListado = (arreglo) => {
   for (i = 0; i < arreglo.length; i++) {
